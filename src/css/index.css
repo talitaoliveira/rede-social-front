@@ -7,3 +7,27 @@
 h1{
     color: red;
 }
+
+div.center{
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 0 auto;
+    min-width: 320px;
+    margin-top: 92px;
+    background-color: purple;
+}
+
+/* media queries */
+@media(max-width: 992px){
+    div.center{
+        margin-top: 78px;
+        background-color: red;
+    }
+}
+
+@media(max-width: 600px){
+    div.center{
+        margin-top: 62px;
+        background-color: green;
+    }
+}
