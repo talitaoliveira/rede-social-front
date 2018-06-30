@@ -8,6 +8,6 @@ import './css/pure-min.css';
 import App from './components/App.jsx';
 
 ReactDOM.render(
-    <h1> Hello Webpack!!  </h1>,
+    <App />,
     document.querySelector('#main')
 )
