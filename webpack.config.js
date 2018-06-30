@@ -3,8 +3,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-let enviroment = process.env.NODE_ENV.trim();
+let enviroment = process.env.NODE_ENV;
+//let enviroment = process.env.NODE_ENV.trim();
 
+
+console.log(`============ NODE_ENV: ${enviroment} ============`);
 
 plugins = [
     new HtmlWebpackPlugin({
