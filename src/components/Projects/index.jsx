@@ -1,5 +1,8 @@
 import React from 'react';
+import './index.css';
 import Api from '../../service/api';
+
+import Project from '../Project';
 
 class Projects extends React.Component {
 
@@ -32,8 +35,11 @@ class Projects extends React.Component {
             <div className="center">
                 {projects.map((project) => {
                     return (
-
-                        <h1 key={project._id}>{project.name}</h1>
+                        <div className="cardProject" key={project._id}>
+                            <img src="https://dummyimage.com/600x400/000/fff" alt="" class="cardProject__image"/>
+                            <h2 className="cardProject__title">{project.name}</h2>
+                            {/* <p className="cardProject__description">{project.description}</p> */}
+                        </div>
                     );
                 })}
             </div>

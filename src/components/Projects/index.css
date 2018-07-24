@@ -1,0 +1,20 @@
+.cardProject{
+    background-color: #eee;
+    padding: 10px;
+    margin: 10px;
+    max-width: 300px;
+    max-height: 300px;
+}
+.cardProject__image{
+    width: 100%;
+}
+.cardProject__title{
+    font-size: 1em;
+}
+
+
+/* Media-Queries */
+@media screen and (min-width: 768px) {
+    .cardProject{
+    }
+}
