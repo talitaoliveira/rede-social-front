@@ -10,19 +10,31 @@ div.header img{
 }
 
 div.header img.logo{
-    height: 92px;
-    width: 164px;
+    height: 62px;
+    width: 110px;
 }
 
 div.header h4.label{
     color: #FFF;
     font-weight: normal;
-    line-height: 92px;
+    line-height: 62px;
     margin: 0;
 }
 
-/* media queries */
+/* Media-Queries */
+@media screen and (min-width: 768px) {
+    div.header img.logo{
+        height: 78px;
+        width: 139px;
+    }
 
+    div.header h4.label{
+        line-height: 78px;
+    }
+}
+
+/* media queries */
+/* 
 @media(max-width: 992px){
     div.header img.logo{
         height: 78px;
@@ -43,4 +55,4 @@ div.header h4.label{
     div.header h4.label{
         line-height: 62px;
     }
-}
+} */
