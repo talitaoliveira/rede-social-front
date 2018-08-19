@@ -14,9 +14,9 @@ div.center{
     min-width: 320px;
     margin-top: 62px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 
@@ -25,6 +25,7 @@ div.center{
     div.center{
         margin-top: 78px;
         max-width: 1000px;
+        flex-direction: row;
     }
 }
 
