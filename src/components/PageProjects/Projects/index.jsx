@@ -25,19 +25,21 @@ class Projects extends React.Component {
 
     render() {
         let projects = this.state.projects;
-        
+
         return (
             <div className="center">
                 <Link to='/'>Voltar</Link>
                 {projects.map((project) => {
                     return (
                         <div className="cardProject" key={project._id}>
-                            <img src="https://dummyimage.com/600x400/000/fff" alt="" className="cardProject__image" />
-                            <h2 className="cardProject__title">
-                                <Link to={`/projects/${project._id}`}>{project.name}</Link>
-                            </h2>
-                            {/* <p className="cardProject__description">{project.description}</p> */}
+                            <Link to={`/projects/${project._id}`}>
+                                <img src="https://dummyimage.com/600x400/000/fff" alt="" className="cardProject__image" />
+                                <h2 className="cardProject__title">
+                                    {project.name}
+                                </h2>
+                            </Link>
                         </div>
+
                     );
                 })}
             </div>
