@@ -12,6 +12,17 @@ const getProjects = (callback) => {
     })
 }
 
+const getProject = (callback, id) => {
+    axios.get(`${urlApi}/projects/${id}`, {
+        headers: {'Content-Type': 'application/json'}
+    }).then((res) => {
+        return callback(res.data);
+    }).catch((err) => {
+        return callback({error: err});
+    })
+}
+
 module.exports = {
-    getProjects
+    getProjects,
+    getProject
 }
