@@ -85,6 +85,7 @@ module.exports = {
     },
     devServer: {
         publicPath: "/",
-        contentBase: "./dist"
+        contentBase: "./dist",
+        historyApiFallback: true,
     }
 };
