@@ -1,6 +1,9 @@
 :root{
     font-size: 16px;
 }
+a{
+    text-decoration: none;
+}
 #main{
     border: 0;
     padding: 0;
