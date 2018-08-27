@@ -5,7 +5,7 @@ import Projects from './Projects';
 import Project from './Project';
 
 const ProjectsPage = () => (
-  <Switch>
+  <Switch basename="/rede-social">
     <Route exact path='/projects' component={Projects}/>
     <Route path='/projects/:number' component={Project}/>
   </Switch>
