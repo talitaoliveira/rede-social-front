@@ -9,7 +9,10 @@
     width: 100%;
 }
 .cardProject__title{
-    font-size: 1em;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
 }
 
 
