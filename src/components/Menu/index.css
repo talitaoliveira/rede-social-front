@@ -1,0 +1,12 @@
+
+.menu{
+    padding: 1em;
+    z-index: 1;
+    cursor: pointer;
+    color: #1AFFD5;
+}
+
+.menu__icon{
+    font-size: 1.8em;
+    color: #FFF;
+}
