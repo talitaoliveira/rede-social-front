@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './index.css';
+import MenuPage from '../Menu/MenuPage';
 
 class Home extends React.Component {
 
@@ -9,13 +10,6 @@ class Home extends React.Component {
         return (
             <div className="center container">
                 <h1>Ola mundo - Home</h1>
-                <nav>
-                    <ul>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/projects'>Projects</Link></li>
-                        <li><Link to='/teste'>Teste</Link></li>
-                    </ul>
-                </nav>
             </div>
         )
 
