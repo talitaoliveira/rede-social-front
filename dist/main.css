@@ -1,5 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
 :root{
     font-size: 16px;
+}
+a{
+    text-decoration: none;
 }
 #main{
     border: 0;
@@ -115,6 +119,52 @@ div.header h4.label{
         line-height: 62px;
     }
 } */
+
+.menu{
+    padding: 1em;
+    z-index: 1;
+    cursor: pointer;
+    color: #1AFFD5;
+}
+
+.menu__icon{
+    font-size: 1.8em;
+    color: #FFF;
+}
+.menuList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  font-size: 2em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 0;
+  visibility: hidden;
+  position: fixed;
+}
+
+ul {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.menuList__item a{
+  color: #FFF;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.show {
+  visibility: visible;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -132,7 +182,10 @@ div.header h4.label{
     width: 100%;
 }
 .cardProject__title{
-    font-size: 1em;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
 }
 
 
@@ -140,4 +193,27 @@ div.header h4.label{
 @media screen and (min-width: 768px) {
     .cardProject{
     }
+}
+/* Project DATA */
+.projectData{
+    width: 100%;
+}
+.projectData__image{
+    width: inherit;
+}
+.projectData__title{
+
+}
+
+/* Project INFO */
+.projectInfo{
+
+}
+.projectInfo__group{
+
+}
+.projectInfo__group-label{
+}
+.projectInfo__group-value{
+
 }
