@@ -1,0 +1,23 @@
+/* Project DATA */
+.projectData{
+    width: 100%;
+}
+.projectData__image{
+    width: inherit;
+}
+.projectData__title{
+
+}
+
+/* Project INFO */
+.projectInfo{
+
+}
+.projectInfo__group{
+
+}
+.projectInfo__group-label{
+}
+.projectInfo__group-value{
+
+}

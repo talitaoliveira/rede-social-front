@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Api from '../../../service/api';
+import './index.css';
+import Button from '../../Button';
 
 class Project extends React.Component {
 
@@ -32,16 +34,19 @@ class Project extends React.Component {
             <div className="center">
                 <Link to='/projects'>Voltar</Link>
                 <div className="projectData">
-                    <img src="https://dummyimage.com/600x400/000/fff" alt="" className="projectData__img" />
+                    <img src="https://dummyimage.com/600x400/000/fff" alt="" className="projectData__image" />
                     <h1 className="projectData__title">{project.name}</h1>
                     <div className="projectInfo">
-                        <div className="projectInfo__description pure-g">
-                            <p className="pure-u-1-3">Descricao:</p>
-                            <p className="pure-u-2-3">{project.description}</p>
+                        <div className="projectInfo__group">
+                            <strong className="projectInfo__group-label">Descrição:</strong>
+                            <p className="projectInfo__group-value">{project.description}</p>
                         </div>
-                        <div className="projectInfo__location pure-g">
-                            <p className="pure-u-1-3">Localizacao:</p>
-                            <p className="pure-u-2-3">{project.location}</p>
+                        <div className="projectInfo__group">
+                            <strong className="projectInfo__group-label">Localização:</strong>
+                            <p className="projectInfo__group-value">{project.location}</p>
+                        </div>
+                        <div className="projectInfo__group center">
+                            <Button enabled={project.volunteers} text="Quero ser voluntário!" />
                         </div>
                     </div>
                 </div>
