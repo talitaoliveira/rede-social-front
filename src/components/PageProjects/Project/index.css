@@ -21,3 +21,8 @@
 .projectInfo__group-value{
 
 }
+
+.buttonGroup{
+    display: flex;
+    justify-content: space-around;
+}
