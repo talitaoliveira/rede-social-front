@@ -37,7 +37,6 @@ if (enviroment === 'production') {
     console.log(" ============ DEVELOPMENT!!! ============ ");
 }
 
-
 module.exports = {
     entry: path.join(__dirname, 'src/index.jsx'),
     output: {
