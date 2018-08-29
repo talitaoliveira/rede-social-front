@@ -9,7 +9,7 @@ import './css/pure-min.css';
 import App from './components/App.jsx';
 
 ReactDOM.render(
-    <BrowserRouter basename="/rede-social">
+    <BrowserRouter>
         <App />
     </BrowserRouter>,
     document.querySelector('#main')
