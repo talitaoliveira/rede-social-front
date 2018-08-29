@@ -16,10 +16,28 @@ class Projects extends React.Component {
     }
 
     componentWillMount() {
-        Api.getProjects(projects => {
-            this.setState({
-                projects: projects
-            });
+        // Api.getProjects(projects => {
+        //     this.setState({
+        //         projects: projects
+        //     });
+        // });
+        this.setState({
+            projects: [{
+                _id: "5b2e627a8c40531116ed83a7",
+                name: "Carrinho da Alegria",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                volunteers: true,
+                location: "GAC",
+                donations: true
+            },
+            {
+                _id: "5b2e62988c40531116ed83a8",
+                name: "Aniversariantes do Mês - NAAC",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                volunteers: true,
+                location: "GAC",
+                donations: true
+            }]
         });
     }
 
