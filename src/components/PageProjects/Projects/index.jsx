@@ -16,28 +16,23 @@ class Projects extends React.Component {
     }
 
     componentWillMount() {
-        // Api.getProjects(projects => {
-        //     this.setState({
-        //         projects: projects
-        //     });
-        // });
+        Api.getProjects(projects => {
+            this.setState({
+                projects: projects
+            });
+        });
+    }
+
+    filterBy(uf){
+        let projectFiltered = this.state.projects;
+        if( uf != '' ){
+            projectFiltered = projectFiltered.filter((el) =>{
+                return el.uf === uf
+            });
+        }
+        
         this.setState({
-            projects: [{
-                _id: "5b2e627a8c40531116ed83a7",
-                name: "Carrinho da Alegria",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                volunteers: true,
-                location: "GAC",
-                donations: true
-            },
-            {
-                _id: "5b2e62988c40531116ed83a8",
-                name: "Aniversariantes do Mês - NAAC",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                volunteers: true,
-                location: "GAC",
-                donations: true
-            }]
+            projects: projectFiltered
         });
     }
 
@@ -47,14 +42,23 @@ class Projects extends React.Component {
         return (
             <div className="center">
                 <Link to='/'>Voltar</Link>
+                <button className="pure-button" onClick={ ()=>{this.filterBy('SP')} }>Filtrar por São Paulo</button>
+                <button className="pure-button" onClick={ ()=>{this.filterBy('PE')} }>Filtrar por Pernambuco</button>
+                <button className="pure-button" onClick={ ()=>{this.filterBy('RJ')} }>Filtrar por Rio de janeirp</button>
+                <button className="pure-button" onClick={ ()=>{this.filterBy('')} }>Trazer Todos</button>
                 {projects.map((project) => {
                     return (
                         <div className="cardProject" key={project._id}>
                             <Link to={`/projects/${project._id}`}>
                                 <img src="https://dummyimage.com/600x400/000/fff" alt="" className="cardProject__image" />
+                                <div className="cardProject__info">
                                 <h2 className="cardProject__title">
                                     {project.name}
                                 </h2>
+                                <span className="cardProject__state">
+                                    {project.uf}
+                                </span>
+                                </div>
                             </Link>
                         </div>
 
