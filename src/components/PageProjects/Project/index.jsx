@@ -17,29 +17,16 @@ class Project extends React.Component {
 
     componentWillMount() {
         let projectId = this.props.match.params.number;
-        // Api.getProject(project => {
-        //     this.setState({
-        //         project: project
-        //     });
-        // }, projectId);
-
-        this.setState({
-            project: {
-                _id: "5b2e627a8c40531116ed83a7",
-                name: "Carrinho da Alegria",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                volunteers: true,
-                location: "GAC",
-                donations: true
-            }
-        });
+        Api.getProject(project => {
+            this.setState({
+                project: project
+            });
+        }, projectId);
     }
 
     render() {
 
         let project = this.state.project;
-
-        console.log(project)
 
         return (
             <div className="center">
@@ -56,8 +43,9 @@ class Project extends React.Component {
                             <strong className="projectInfo__group-label">Localização:</strong>
                             <p className="projectInfo__group-value">{project.location}</p>
                         </div>
-                        <div className="projectInfo__group center">
+                        <div className="projectInfo__group buttonGroup">
                             <Button enabled={project.volunteers} text="Quero ser voluntário!" />
+                            <Button enabled={project.donation} text="Quero doar!" />
                         </div>
                     </div>
                 </div>
