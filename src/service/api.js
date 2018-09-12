@@ -1,6 +1,7 @@
 
 const axios = require('axios');
-const urlApi = 'http://localhost:8000';
+// const urlApi = 'http://localhost:8000';
+const urlApi = 'https://talitaoliveira.com.br/api-projects';
 
 const getProjects = (callback) => {
     axios.get(`${urlApi}/projects/`, {
