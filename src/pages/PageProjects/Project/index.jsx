@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Api from '../../../service/api';
 import './index.css';
-import Button from '../../Button';
+import Button from '../../../components/Button';
 
 class Project extends React.Component {
 

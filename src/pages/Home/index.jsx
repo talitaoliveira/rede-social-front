@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './index.css';
-import MenuPage from '../Menu/MenuPage';
+import MenuPage from '../../components/Menu/MenuPage';
 
 class Home extends React.Component {
 

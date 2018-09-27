@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './index.css';
 import Api from '../../../service/api';
 
-import Modal from '../../Modal';
+import Modal from '../../../components/Modal';
 import Repository from '../../../infrastructure/Repository';
 
 const repository = new Repository();
@@ -17,6 +17,12 @@ class Projects extends React.Component {
             projects: [],
             projectsFiltered: []
         }
+       // var handleToUpdate = this.handleToUpdate.bind(this);
+        var arg1 = '';
+
+        const favDialog = document.getElementById('favDialog');
+
+        console.log(this);
     }
 
     componentWillMount() {
@@ -93,7 +99,22 @@ class Projects extends React.Component {
         // });
     }
 
+    handleToUpdate(someArg) {
+        alert('We pass argument from Child to Parent: ' + someArg);
+        this.setState({ arg1: someArg });
+    }
+
+
+    showMcodal() {
+        console.log('Show Modal');
+        console.log(this.handleToUpdate);
+        //this.favDialog.showModal();
+    }
+
     render() {
+
+        var handleToUpdate = this.handleToUpdate;
+
         let projects = (this.state.projectsFiltered.length === 0) ? this.state.projects : this.state.projectsFiltered;
 
         return (
@@ -103,7 +124,8 @@ class Projects extends React.Component {
                 <button className="pure-button" onClick={ ()=>{this.filterBy('PE')} }>Filtrar por Pernambuco</button>
                 <button className="pure-button" onClick={ ()=>{this.filterBy('RJ')} }>Filtrar por Rio de janeirp</button>
                 <button className="pure-button" onClick={ ()=>{this.filterBy('')} }>Trazer Todos</button> */}
-                <Modal triggerParent={this.filterBy()} />
+                {/* <Modal triggerParent={this.filterBy()}  /> */}
+                <Modal handleToUpdate={handleToUpdate.bind(this)} />
                 {projects.map((project) => {
                     return (
                         <div className="cardProject" key={project._id}>
@@ -122,6 +144,16 @@ class Projects extends React.Component {
 
                     );
                 })}
+
+
+                <dialog id="favDialog" className="dialogInfo">
+                    ola
+                </dialog>
+
+                <button className={`pure-button button-xlarge`} onClick={() => this.showMcodal()}>
+                    Filtra
+            </button>
+
             </div>
         )
 

@@ -2,6 +2,9 @@ import React from 'react';
 
 export default function Modal(props) {
 
+    var handleToUpdate  =   props.handleToUpdate;
+
+
     const favDialog = document.getElementById('favDialog');
 
     function showModal() {
@@ -26,15 +29,17 @@ export default function Modal(props) {
                     </select>
                 </section>
             </dialog>
-            <button onClick={props.triggerParent}>
+            {/* <button onClick={props.triggerParent}> */}
+            <button onClick={() => handleToUpdate('PT')}>
                 Clica
             </button>
-            {/* <button
-                className={`pure-button button-xlarge ${disabledButton}`}
-                onClick={() => { showModal() }}
+            <button
+                className={`pure-button button-xlarge`}
+                onClick={() => showModal()}
             >
+            Filtra
                 {props.text}
-            </button> */}
+            </button>
         </div>
     )
 
