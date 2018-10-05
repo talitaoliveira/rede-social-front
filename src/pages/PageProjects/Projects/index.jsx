@@ -17,17 +17,10 @@ class Projects extends React.Component {
             projects: [],
             projectsFiltered: []
         }
-       // var handleToUpdate = this.handleToUpdate.bind(this);
-        var arg1 = '';
-
-        const favDialog = document.getElementById('favDialog');
-
-        console.log(this);
     }
 
     componentWillMount() {
         this.getData();
-
     }
 
     getData() {
@@ -83,20 +76,21 @@ class Projects extends React.Component {
         });
     }
 
+    filter(state, name) {
 
-    filterBy(uf) {
-        uf = 'SP'
-        //console.log(this)
-        // let projectFiltered = this.state.projects;
-        // if( uf != '' ){
-        //     projectFiltered = projectFiltered.filter((el) =>{
-        //         return el.uf === uf
-        //     });
-        // }
+        let projectFiltered = this.state.projects;
 
-        // this.setState({
-        //     projectsFiltered: projectFiltered
-        // });
+        projectFiltered = projectFiltered.filter((el) => {
+
+            let conditionState = null;
+
+            let projectName = el.name.toLowerCase();
+            return projectName.includes(name) && el.uf === state
+        });
+
+        this.setState({
+            projectsFiltered: projectFiltered
+        });
     }
 
     handleToUpdate(someArg) {
@@ -104,28 +98,19 @@ class Projects extends React.Component {
         this.setState({ arg1: someArg });
     }
 
+    handleSelectedFromChild(state, name) {
+        this.filter(state, name);
 
-    showMcodal() {
-        console.log('Show Modal');
-        console.log(this.handleToUpdate);
-        //this.favDialog.showModal();
     }
 
     render() {
-
-        var handleToUpdate = this.handleToUpdate;
 
         let projects = (this.state.projectsFiltered.length === 0) ? this.state.projects : this.state.projectsFiltered;
 
         return (
             <div className="center">
-                <Link to='/'>Voltar</Link>
-                {/* <button className="pure-button" onClick={ ()=>{this.filterBy('SP')} }>Filtrar por São Paulo</button>
-                <button className="pure-button" onClick={ ()=>{this.filterBy('PE')} }>Filtrar por Pernambuco</button>
-                <button className="pure-button" onClick={ ()=>{this.filterBy('RJ')} }>Filtrar por Rio de janeirp</button>
-                <button className="pure-button" onClick={ ()=>{this.filterBy('')} }>Trazer Todos</button> */}
-                {/* <Modal triggerParent={this.filterBy()}  /> */}
-                <Modal handleToUpdate={handleToUpdate.bind(this)} />
+
+                <Modal handleSelectedFilter={this.handleSelectedFromChild.bind(this)} />
                 {projects.map((project) => {
                     return (
                         <div className="cardProject" key={project._id}>
@@ -144,15 +129,6 @@ class Projects extends React.Component {
 
                     );
                 })}
-
-
-                <dialog id="favDialog" className="dialogInfo">
-                    ola
-                </dialog>
-
-                <button className={`pure-button button-xlarge`} onClick={() => this.showMcodal()}>
-                    Filtra
-            </button>
 
             </div>
         )
