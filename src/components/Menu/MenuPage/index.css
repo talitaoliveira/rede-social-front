@@ -17,13 +17,13 @@
   position: fixed;
 }
 
-ul {
+/* ul {
   height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   list-style: none;
-}
+} */
 
 .menuList__item a{
   color: #FFF;
