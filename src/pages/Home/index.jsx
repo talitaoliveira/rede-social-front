@@ -9,7 +9,22 @@ class Home extends React.Component {
     render() {
         return (
             <div className="center container">
-                <h1>Ola mundo - Home</h1>
+                <nav className="container__nav">
+                    <ul className="container__list">
+                        <li className="list__item">
+                            <Link to="/projects/">Projetos</Link>
+                        </li>
+                        <li className="list__item">
+                            <Link to="/projects/">Teste</Link>
+                        </li>
+                        <li className="list__item">
+                            <Link to="/about/">Sobre</Link>
+                        </li>
+                        <li className="list__item">
+                            <Link to="/contribute/">Contribuir</Link>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         )
 
