@@ -43,7 +43,8 @@ class Projects extends React.Component {
 
     getDataFromRepository() {
         return new Promise(async (resolve, reject) => {
-            repository.retrieve(data => {
+            repository.retrieveAll(data => {
+                console.log(data)
                 this.setState({
                     projects: data
                 });
@@ -81,8 +82,6 @@ class Projects extends React.Component {
         let projectFiltered = this.state.projects;
 
         projectFiltered = projectFiltered.filter((el) => {
-
-            let conditionState = null;
 
             let projectName = el.name.toLowerCase();
             return projectName.includes(name) && el.uf === state
