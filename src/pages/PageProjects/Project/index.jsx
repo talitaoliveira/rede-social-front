@@ -5,23 +5,66 @@ import Api from '../../../service/api';
 import './index.css';
 import Button from '../../../components/Button';
 
+import Repository from '../../../infrastructure/Repository';
+const repository = new Repository();
+
 class Project extends React.Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = {
             project: {}
         }
     }
 
     componentWillMount() {
-        let projectId = this.props.match.params.number;
-        Api.getProject(project => {
-            this.setState({
-                project: project
+        this.getData();
+    }
+
+    getData() {
+        try {
+            this.getDataFromRepository().then(() => {
+                console.log('[SUCCESS]: getDataFromRepository');
+            }).catch(() => {
+                console.warn('[WARNIGN]: Nothing on local repository. GetDataFromAPI');
+                this.getDataFromAPI().then((data) => {
+                    console.log('[SUCCESS]: getDataFromAPI');
+                }).catch(() => {
+                    console.log('[APPLICATION ERROR]: Fail to retrieve data from API');
+                })
             });
-        }, projectId);
+        } catch (err) {
+            console.error('[APPLICATION ERROR]: ', error);
+        }
+    }
+
+    getDataFromRepository() {
+        return new Promise(async (resolve, reject) => {
+            let projectId = this.props.match.params.number;
+            repository.retrieveOne(projectId, data => {
+                this.setState({
+                    project: data
+                });
+                resolve();
+            }, () => {
+                console.log('[APPLICATION INFO]: No saved data on local repository.');
+                reject();
+            })
+        });
+    }
+
+    getDataFromAPI() {
+        return new Promise((resolve, reject) => {
+
+            let projectId = this.props.match.params.number;
+            Api.getProject(project => {
+                this.setState({
+                    project: project
+                });
+                resolve(projects);
+            }, projectId);
+        });
     }
 
     render() {
