@@ -7,49 +7,49 @@ class About extends React.Component {
 
     render() {
         return (
-            <div className="center">
+            <section className="pageSection aboutPage">
                 <Link to='/'>Voltar</Link>
 
-                <section>
-                    <h2>Sobre este Projeto</h2>
+                <article className="pageSection__description">
+                    <h2 className="pageSection__title">Sobre este Projeto</h2>
                     <p>
                         Projeto desenvolvido por <strong>Talita Silva de Oliveira</strong>, com o objetivo de realizar a conclusão da pós graduacão de <strong>Design de Webapps com tecnologia front end</strong>.
                 </p>
-                </section>
+                </article>
 
-                <section>
-                    <h2>Contato</h2>
-                    <ul class="content_social">
+                <article className="pageSection__description">
+                    <h2 className="pageSection__title">Contato</h2>
+                    <ul className="content__social">
 
-                        <li class="social-links__github">
+                        <li className="social-links__github">
                             <a href="https://github.com/talitaoliveira" target="_blank">
-                                <i class="fab fa-github"></i>
+                                <i className="fab fa-github"></i>
                             </a>
                         </li>
-                        <li class="social-links__linkedin">
+                        <li className="social-links__linkedin">
                             <a href="https://br.linkedin.com/in/litaaoliveira" target="_blank">
-                                <i class="fab fa-linkedin"></i>
+                                <i className="fab fa-linkedin"></i>
                             </a>
                         </li>
-                        <li class="social-links__codepen">
+                        <li className="social-links__codepen">
                             <a href="https://codepen.io/talitaoliveira" target="_blank">
-                                <i class="fab fa-codepen"></i>
+                                <i className="fab fa-codepen"></i>
                             </a>
                         </li>
-                        <li class="social-links__medium">
+                        <li className="social-links__medium">
                             <a href="https://medium.com/@litaoliveira" target="_blank">
-                                <i class="fab fa-medium"></i>
+                                <i className="fab fa-medium"></i>
                             </a>
                         </li>
-                        <li class="social-links__twitter">
+                        <li className="social-links__twitter">
                             <a href="https://twitter.com/liitacherry" target="_blank">
-                                <i class="fab fa-twitter"></i>
+                                <i className="fab fa-twitter"></i>
                             </a>
                         </li>
 
                     </ul>
-                </section>
-            </div>
+                </article>
+            </section>
         )
 
     }

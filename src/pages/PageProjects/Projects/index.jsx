@@ -107,7 +107,7 @@ class Projects extends React.Component {
         let projects = (this.state.projectsFiltered.length === 0) ? this.state.projects : this.state.projectsFiltered;
 
         return (
-            <div className="center">
+            <section className="pageSection projectsPage">
 
                 <Modal handleSelectedFilter={this.handleSelectedFromChild.bind(this)} />
                 {projects.map((project) => {
@@ -129,7 +129,7 @@ class Projects extends React.Component {
                     );
                 })}
 
-            </div>
+            </section>
         )
 
     }

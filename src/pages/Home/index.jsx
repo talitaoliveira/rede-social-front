@@ -8,9 +8,9 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div className="center container">
-                <nav className="container__nav">
-                    <ul className="container__list">
+            <section className="pageSection homePage">
+                <nav className="homePage__nav">
+                    <ul className="homePage__list">
                         <li className="list__item">
                             <Link to="/projects/">Projetos</Link>
                         </li>
@@ -25,7 +25,7 @@ class Home extends React.Component {
                         </li>
                     </ul>
                 </nav>
-            </div>
+            </section>
         )
 
     }

@@ -72,7 +72,7 @@ class Project extends React.Component {
         let project = this.state.project;
 
         return (
-            <div className="center">
+            <section className="pageSection projectPage">
                 <Link to='/projects'>Voltar</Link>
                 <div className="projectData">
                     <img src="https://dummyimage.com/600x400/000/fff" alt="" className="projectData__image" />
@@ -92,7 +92,7 @@ class Project extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         )
 
     }
