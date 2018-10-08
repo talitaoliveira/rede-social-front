@@ -10,9 +10,9 @@ a{
     margin: 0;
 }
 
-div.center{
+.pageSection{
     box-sizing: border-box;
-    padding: 5px;
+    padding: 25px;
     margin: 0 auto;
     min-width: 320px;
     margin-top: 62px;
@@ -21,6 +21,17 @@ div.center{
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
+    text-align: center;
+}
+
+.pageSection__title{
+    font-size: 1.5em;
+    margin: 20px 0;
+    text-align: left;
+}
+.pageSection__description{
+    text-align: left;
+    font-size: 1.2rem;
 }
 
 /* Media-Queries */
