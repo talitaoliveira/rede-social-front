@@ -11,9 +11,9 @@ a{
     margin: 0;
 }
 
-div.center{
+.pageSection{
     box-sizing: border-box;
-    padding: 5px;
+    padding: 25px;
     margin: 0 auto;
     min-width: 320px;
     margin-top: 62px;
@@ -22,6 +22,17 @@ div.center{
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
+    text-align: center;
+}
+
+.pageSection__title{
+    font-size: 1.5em;
+    margin: 20px 0;
+    text-align: left;
+}
+.pageSection__description{
+    text-align: left;
+    font-size: 1.2rem;
 }
 
 /* Media-Queries */
@@ -50,6 +61,54 @@ div.center{
         
     }
 } */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 /*!
 Pure v1.0.0
 Copyright 2013 Yahoo!
@@ -148,13 +207,13 @@ div.header h4.label{
   position: fixed;
 }
 
-ul {
+/* ul {
   height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   list-style: none;
-}
+} */
 
 .menuList__item a{
   color: #FFF;
@@ -165,12 +224,57 @@ ul {
 .show {
   visibility: visible;
 }
-.container{
+.homePage{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+.homePage__list{
+    display: flex;
+    list-style: none;
+    width: 95vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.list__item{
+    height: 200px;
+    color: #FFF;
+    margin: 5px 0;
+}
+.list__item a{
+    width: 100%;
+    height: inherit;
+    color: #FFF;
+    display: block;
+    display: flex;
+    padding-top: 30px;
+    padding-left: 20px;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.list__item:nth-child(1),
+.list__item:nth-child(4){
+    width: 55%;
+    background-color: #1D3461;
+}
+
+.list__item:nth-child(2),
+.list__item:nth-child(3){
+    width: 35%;
+    background-color: #38AECC;
+}
+.content__social {
+    margin-top: 20px;
+    max-width: 350px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .cardProject{
     background-color: #eee;
     padding: 10px;
@@ -186,12 +290,15 @@ ul {
     text-decoration: none;
     color: #000;
     text-align: center;
+    margin: 10px;
 }
 .cardProject__state{
     color: #FFF;
     background-color: #2775B0;
     padding: 5px 10px;
     border-radius: 8px;
+    display: block;
+    width: 20px;
 }
 
 
@@ -199,6 +306,65 @@ ul {
 @media screen and (min-width: 768px) {
     .cardProject{
     }
+}
+.modalFilter{
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    padding: 20px;
+    position: absolute;
+    left: 10vw;
+    box-shadow: 5px 5px 10px #ccc;
+    visibility: hidden;
+}
+
+/* Header */
+.modalFilter__header{
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.header__title{
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: #2c80b9;
+}
+.header__close{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.header__close-icon{
+    color: #2c80b9;
+}
+
+/* Sections */
+.modalFilter__section{
+    margin-bottom: 20px;
+}
+.filter__label{
+    margin-bottom: 5px;
+}
+
+.filter__name{
+    border: 1px solid #eee;
+    padding: 5px;
+}
+
+.filter__value{
+    width: 100%;
+    margin: 10px 0 ;
+}
+
+.filter__state{
+    border: 1px solid #eee;
+    padding: 5px;
 }
 /* Project DATA */
 .projectData{
