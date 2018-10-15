@@ -15,9 +15,6 @@ class Home extends React.Component {
                             <Link to="/projects/">Projetos</Link>
                         </li>
                         <li className="list__item">
-                            <Link to="/projects/">Teste</Link>
-                        </li>
-                        <li className="list__item">
                             <Link to="/about/">Sobre</Link>
                         </li>
                         <li className="list__item">
