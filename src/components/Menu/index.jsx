@@ -47,6 +47,9 @@ class Menu extends React.Component {
                             <Link to='/projects/' onClick={(e) => this.toggleMenu()}>Projetos</Link>
                         </li>
                         <li className="menuList__item">
+                            <Link to='/contribute/' onClick={(e) => this.toggleMenu()}>Contribuir</Link>
+                        </li>
+                        <li className="menuList__item">
                             <Link to='/about/' onClick={(e) => this.toggleMenu()}>Sobre</Link>
                         </li>
                     </ul>
