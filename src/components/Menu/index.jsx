@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './index.css';
-import MenuPage from './MenuPage';
 
 class Menu extends React.Component {
 
@@ -21,27 +20,37 @@ class Menu extends React.Component {
         });
     }
 
-    verifyRoute(){
+    verifyRoute() {
 
-        if( window.location.pathname === '/' ){
+        if (window.location.pathname === '/') {
             console.log('HOME')
-        }else{
+        } else {
             console.log('NAO HOME')
         }
     }
 
     render() {
         
-        this.verifyRoute();
-
-        let toggle = this.state.toggle;
+        let {toggle} = this.state;
 
         return (
             <div className="container">
                 <div className="menu" onClick={() => this.toggleMenu()}>
-                    <i className="menu__icon fas fa-bars"></i>
+                    <i className={`menu__icon fas ${(toggle === true ? 'fa-times' : 'fa-bars')}`}></i>
                 </div>
-                <MenuPage toggleMenu={toggle} />
+                <div className={`menuList ${(toggle === true ? 'show' : '')}`}>
+                    <ul>
+                        <li className="menuList__item">
+                            <Link to='/' onClick={(e) => this.toggleMenu()}>Home</Link>
+                        </li>
+                        <li className="menuList__item">
+                            <Link to='/projects/' onClick={(e) => this.toggleMenu()}>Projetos</Link>
+                        </li>
+                        <li className="menuList__item">
+                            <Link to='/about/' onClick={(e) => this.toggleMenu()}>Sobre</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
         )

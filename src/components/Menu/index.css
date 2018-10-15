@@ -4,9 +4,44 @@
     z-index: 1;
     cursor: pointer;
     color: #1AFFD5;
+    position: relative;
 }
 
 .menu__icon{
     font-size: 1.8em;
     color: #FFF;
 }
+.menuList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    font-size: 2em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 0;
+    visibility: hidden;
+    position: fixed;
+  }
+
+  .menuList ul {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .menuList__item a{
+    color: #FFF;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+  }
+
+  .show {
+    visibility: visible;
+  }
