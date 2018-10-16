@@ -15,7 +15,12 @@ class Projects extends React.Component {
 
         this.state = {
             projects: [],
-            projectsFiltered: []
+            projectsFiltered: [],
+            hitSearch: false,
+            searchBy: {
+                state: null,
+                name: null
+            }
         }
     }
 
@@ -82,52 +87,78 @@ class Projects extends React.Component {
         let projectFiltered = this.state.projects;
 
         projectFiltered = projectFiltered.filter((el) => {
-
+            return el.uf === state
+        }).filter((el) => {
             let projectName = el.name.toLowerCase();
-            return projectName.includes(name) && el.uf === state
-        });
+            console.log(name)
+
+            return projectName.includes(name)
+        })
 
         this.setState({
-            projectsFiltered: projectFiltered
+            projectsFiltered: projectFiltered,
+            searchBy: {
+                state: state,
+                name: name
+            }
         });
-    }
-
-    handleToUpdate(someArg) {
-        alert('We pass argument from Child to Parent: ' + someArg);
-        this.setState({ arg1: someArg });
     }
 
     handleSelectedFromChild(state, name) {
         this.filter(state, name);
-
+        this.setState({
+            hitSearch: true
+        });
     }
 
     render() {
 
         let projects = (this.state.projectsFiltered.length === 0) ? this.state.projects : this.state.projectsFiltered;
+        let filtenarName = this.state.searchBy.name;
+        let stateName = this.state.searchBy.state;
+        let resultsFound = this.state.projectsFiltered.length;
+        let {hitSearch} = this.state;
 
         return (
             <section className="pageSection projectsPage">
-
+                {hitSearch > 0 &&
+                <div className="projectsPage__filterFeedback">
+                    <span className="filterFeedback__title">Busca realizada:</span>  
+                    <p className="filterFeedback__group">
+                        <strong className="groupFilter__label">Nome: </strong>
+                        <span className="groupFilter__value">{filtenarName ? filtenarName : '-'}</span>
+                    </p>
+                    <p className="filterFeedback__group">
+                        <strong className="groupFilter__label">Estado: </strong>
+                        <span className="groupFilter__value">{stateName ? stateName : '-'}</span>
+                    </p>
+                    <p className="filterFeedback__group">
+                        <strong className="groupFilter__label">Resultados encontrados: </strong>
+                        <span className="groupFilter__value">{resultsFound}</span>
+                    </p>
+                </div>
+                }
                 <Modal handleSelectedFilter={this.handleSelectedFromChild.bind(this)} />
-                {projects.map((project) => {
-                    return (
-                        <div className="cardProject" key={project._id}>
-                            <Link to={`/projects/${project._id}`}>
-                                <img src="https://dummyimage.com/600x400/000/fff" alt="" className="cardProject__image" />
-                                <div className="cardProject__info">
-                                    <h2 className="cardProject__title">
-                                        {project.name}
-                                    </h2>
-                                    <span className="cardProject__state">
-                                        {project.uf}
-                                    </span>
-                                </div>
-                            </Link>
-                        </div>
+                <div className='projectsPage__projectList'>
+                    {projects.map((project) => {
+                        return (
+                            <div className="cardProject" key={project._id}>
+                                <Link to={`/projects/${project._id}`}>
+                                    <img src="https://dummyimage.com/600x400/000/fff" alt="" className="cardProject__image" />
+                                    <div className="cardProject__info">
+                                        <h2 className="cardProject__title">
+                                            {project.name}
+                                        </h2>
+                                        <span className="cardProject__state">
+                                            {project.uf}
+                                        </span>
+                                    </div>
+                                </Link>
+                            </div>
 
-                    );
-                })}
+                        );
+                    })}
+                </div>
 
             </section>
         )

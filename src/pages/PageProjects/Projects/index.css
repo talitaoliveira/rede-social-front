@@ -1,3 +1,8 @@
+.projectsPage{
+    display: flex;
+    justify-content: center;
+}
+
 .cardProject{
     background-color: #eee;
     padding: 10px;
@@ -24,9 +29,40 @@
     width: 20px;
 }
 
+/* styles for filter feedback */
+.projectsPage__filterFeedback{
+    background-color: #eee;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.2rem;
+}
+.filterFeedback__title{
+    border-left: 1px solid black;
+    padding-left: 10px;
+}
+.filterFeedback__group{
+    padding: 5px 0;
+}
+.groupFilter__label{
+    font-size: 1.1rem;
+}
+.groupFilter__value{
+    padding: 0 5px;
+    background-color: #2775B0;
+    color: #FFF;
+    border-radius: 8px;
+}
+
 
 /* Media-Queries */
 @media screen and (min-width: 768px) {
-    .cardProject{
+    .projectsPage__projectList{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
     }
 }
