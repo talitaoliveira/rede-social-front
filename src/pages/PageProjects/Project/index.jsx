@@ -73,7 +73,6 @@ class Project extends React.Component {
 
         return (
             <section className="pageSection projectPage">
-                <Link to='/projects'>Voltar</Link>
                 <div className="projectData">
                     <img src="https://dummyimage.com/600x400/000/fff" alt="" className="projectData__image" />
                     <h1 className="projectData__title">{project.name}</h1>
