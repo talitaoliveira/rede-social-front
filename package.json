@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://talitaoliveira.com.br/rede-social/",
   "scripts": {
     "start": "NODE_ENV=development node node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development",
     "build": "NODE_ENV=production node node_modules/webpack/bin/webpack.js --mode production"
