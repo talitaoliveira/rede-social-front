@@ -1,9 +1,14 @@
 /* Project DATA */
 .projectData{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .projectData__image{
     width: inherit;
+    max-width: 700px;
 }
 .projectData__title{
 
@@ -11,15 +16,22 @@
 
 /* Project INFO */
 .projectInfo{
-
+    text-align: left;
+    max-width: 700px;
 }
 .projectInfo__group{
-
+    margin: 20px 0;
+    border-left: 2px solid #ddd;
+    padding: 15px;
 }
 .projectInfo__group-label{
+    font-size: 1.4rem;
+    margin: 10px 0;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 .projectInfo__group-value{
-
+    font-size: 1.2rem;
 }
 
 .buttonGroup{
