@@ -26,20 +26,20 @@ export default function Modal(props) {
 
     return (
 
-        <div>
+        <div className="filterComponent">
             <div id="favDialog" className="modalFilter">
                 <div className="modalFilter__header">
-                    <h2 className="header__title">Filtrar</h2>
+                    <h2 className="header__title">Buscar</h2>
                     <span className="header__close" onClick={() => closeModal()}>
                         <i className="far fa-times-circle header__close-icon"></i>
                     </span>
                 </div>
                 <section className="modalFilter__section" >
-                    <label htmlFor="filter__name" className="filter__label">Filtrar por nome:</label>
+                    <label htmlFor="filter__name" className="filter__label">Buscar por nome:</label>
                     <input type="text" id="filter__name" className="filter__value filter__name" />
                 </section>
                 <section className="modalFilter__section">
-                    <label htmlFor="filter__state" className="filter__label">Filtrar por estado:</label>
+                    <label htmlFor="filter__state" className="filter__label">Buscar por estado:</label>
                     <select name="filter__state" className="filter__value filter__state" id="filter__state">
                         <option value="">Selecione</option>
                         <option value="SP">São Paulo</option>
@@ -51,11 +51,8 @@ export default function Modal(props) {
                     Clica
                 </button>
             </div>
-            <button
-                className={`pure-button button-xlarge`}
-                onClick={() => openModal()}
-            >
-                Filtrar
+            <button className='filterComponent__button' onClick={() => openModal()} alt="Busca">
+                <i className="fas fa-search"></i>
             </button>
         </div>
     )
