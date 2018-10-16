@@ -69,7 +69,7 @@ class Project extends React.Component {
 
     render() {
 
-        let project = this.state.project;
+        let {project} = this.state;
 
         return (
             <section className="pageSection projectPage">
@@ -86,10 +86,10 @@ class Project extends React.Component {
                             <strong className="projectInfo__group-label">Localização:</strong>
                             <p className="projectInfo__group-value">{project.location}</p>
                         </div>
-                        <div className="projectInfo__group buttonGroup">
+                        {/* <div className="projectInfo__group buttonGroup">
                             <Button enabled={project.volunteers} text="Quero ser voluntário!" />
                             <Button enabled={project.donation} text="Quero doar!" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
