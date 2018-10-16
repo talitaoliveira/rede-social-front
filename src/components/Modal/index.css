@@ -1,3 +1,20 @@
+.filterComponent__button{
+    position: fixed;
+    bottom: 2vh;
+    right: 5vw;
+    position: fixed;
+    bottom: 2vh;
+    right: 5vw;
+    padding: 25px;
+    border-radius: 100px;
+    background-color: #2c80b9;
+    color: #FFF;
+}
+
+.filterComponent__button i {
+    font-size: 1.3rem;
+}
+
 .modalFilter{
     border: 1px solid #ccc;
     background-color: #fff;
@@ -5,7 +22,7 @@
     flex-direction: column;
     width: 70vw;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     left: 10vw;
     box-shadow: 5px 5px 10px #ccc;
     visibility: hidden;
