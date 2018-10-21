@@ -20,16 +20,9 @@ class Menu extends React.Component {
         });
     }
 
-    verifyRoute() {
-
-        if (window.location.pathname === '/') {
-            console.log('HOME')
-        } else {
-            console.log('NAO HOME')
-        }
-    }
 
     render() {
+        
         
         let {toggle} = this.state;
 
