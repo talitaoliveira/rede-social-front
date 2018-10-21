@@ -16,7 +16,7 @@ class Project extends React.Component {
 
         this.state = {
             project: {}
-        } 
+        }
     }
 
     componentWillMount() {
@@ -33,7 +33,7 @@ class Project extends React.Component {
                 }).catch(() => {
                     console.log('[APPLICATION ERROR]: Fail to retrieve data from API');
                     this.getDataFromRepository().then((data) => {
-                    console.log('[SUCCESS]: getDataFromRepository');
+                        console.log('[SUCCESS]: getDataFromRepository');
                     }).catch(() => {
                         console.warn('[WARNIGN]: Nothing on local repository. GetDataFromAPI');
                     })
@@ -78,7 +78,7 @@ class Project extends React.Component {
     formatDescription(description) {
         let descriptionSplit = description.split(';');
         let descriptionFormated = '';
-        descriptionSplit.forEach((line)=>{
+        descriptionSplit.forEach((line) => {
             descriptionFormated += `${line}\n`;
         });
 
@@ -89,10 +89,10 @@ class Project extends React.Component {
     render() {
 
         let { project } = this.state;
-        
+
         return (
             <section className="pageSection projectPage">
-            <BackButton/>
+                <BackButton />
                 <div className="projectData">
                     <img src={project.image} alt="" className="projectData__image" />
                     <h1 className="projectData__title">{project.name}</h1>
@@ -107,24 +107,29 @@ class Project extends React.Component {
                         </div>
                         <div className="projectInfo__group">
                             <strong className="projectInfo__group-label">
-                            <i className="fab fa-instagram projectInfo__social-icon"></i>
-                            Instagram:</strong>
+                                <i className="fab fa-instagram projectInfo__social-icon"></i>
+                                Instagram:</strong>
                             <p className="projectInfo__group-value">
-                                <a target="_blank" href={project.instagram ? project.instagram : '#'}>{project.instagram ? project.instagram : '-'}</a>
+                                {project.instagram &&
+                                    <a target="_blank" href={project.instagram}>{project.instagram}</a>
+                                }
                             </p>
                         </div>
                         <div className="projectInfo__group">
                             <strong className="projectInfo__group-label">
-                            <i className="fab fa-facebook projectInfo__social-icon"></i>Facebook:</strong>
+                                <i className="fab fa-facebook projectInfo__social-icon"></i>Facebook:</strong>
                             <p className="projectInfo__group-value">
-                                <a target="_blank" href={project.website ? project.website : '#'}>{project.website ? project.website : '-'}</a>
+                                {project.facebook &&
+                                    <a target="_blank" href={project.facebook}>{project.facebook}</a>
+                                }
                             </p>
                         </div>
                         <div className="projectInfo__group">
                             <strong className="projectInfo__group-label">Website:</strong>
                             <p className="projectInfo__group-value">
-                                <a target="_blank" href={project.website ? project.website : '#'}>{project.website ? project.website : '-'}</a>
-                            </p>
+                                {project.website &&
+                                    <a target="_blank" href={project.website}>{project.website}</a>
+                                }                            </p>
                         </div>
                         {/* <div className="projectInfo__group buttonGroup">
                             <Button enabled={project.volunteers} text="Quero ser voluntário!" />
