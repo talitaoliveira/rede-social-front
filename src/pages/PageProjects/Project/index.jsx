@@ -106,13 +106,16 @@ class Project extends React.Component {
                             <p className="projectInfo__group-value">{project.city} - {project.uf}</p>
                         </div>
                         <div className="projectInfo__group">
-                            <strong className="projectInfo__group-label">Instagram:</strong>
+                            <strong className="projectInfo__group-label">
+                            <i className="fab fa-instagram projectInfo__social-icon"></i>
+                            Instagram:</strong>
                             <p className="projectInfo__group-value">
                                 <a target="_blank" href={project.instagram ? project.instagram : '#'}>{project.instagram ? project.instagram : '-'}</a>
                             </p>
                         </div>
                         <div className="projectInfo__group">
-                            <strong className="projectInfo__group-label">Facebook:</strong>
+                            <strong className="projectInfo__group-label">
+                            <i className="fab fa-facebook projectInfo__social-icon"></i>Facebook:</strong>
                             <p className="projectInfo__group-value">
                                 <a target="_blank" href={project.website ? project.website : '#'}>{project.website ? project.website : '-'}</a>
                             </p>
