@@ -8,10 +8,11 @@
     padding: 10px;
     margin: 10px;
     max-width: 300px;
-    max-height: 300px;
+    max-height: 500px;
 }
 .cardProject__image{
     width: 100%;
+    width: 300px;
 }
 .cardProject__title{
     font-size: 1.2em;
@@ -26,7 +27,7 @@
     padding: 5px 10px;
     border-radius: 8px;
     display: block;
-    width: 20px;
+    max-width: fit-content;
 }
 
 /* styles for filter feedback */
