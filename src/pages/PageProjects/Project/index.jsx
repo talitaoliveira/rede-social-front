@@ -94,7 +94,12 @@ class Project extends React.Component {
             <section className="pageSection projectPage">
                 <BackButton />
                 <div className="projectData">
-                    <img src={project.image} alt="" className="projectData__image" />
+                    {project.image &&
+                        <img src={project.image} alt={`Logo do projeto social ${project.name}`} className="projectData__image" />
+                    }
+                    {!project.image &&
+                        <img src='' alt="img/image_rede_social" alt="Logo da aplicação, estrela com as letras RS no meio. Rede Social." className="projectData__image" />
+                    }
                     <h1 className="projectData__title">{project.name}</h1>
                     <div className="projectInfo">
                         <div className="projectInfo__group">
