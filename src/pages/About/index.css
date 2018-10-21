@@ -3,6 +3,13 @@
     max-width: 350px;
     width: 90%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-around;
+}
+.social-links a{
+    color: #000;
+}
+.social-links__icon{
+    margin-right: 10px;
 }
