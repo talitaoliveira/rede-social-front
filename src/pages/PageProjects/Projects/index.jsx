@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './index.css';
@@ -94,15 +94,14 @@ class Projects extends React.Component {
     filter(state, name) {
 
         let projectFiltered = this.state.projects;
-        console.log(name)
-        projectFiltered = projectFiltered.filter((el) => {
-            return el.uf === state
-        }).filter((el) => {
-            let projectName = el.name.toLowerCase();
 
+        if(state){
+            projectFiltered = this.filterUF(state, projectFiltered)
+        }
 
-            return projectName.includes(name)
-        })
+        if(name){
+            projectFiltered = this.filterName(name, projectFiltered)
+        }
 
         this.setState({
             projectsFiltered: projectFiltered,
@@ -111,6 +110,26 @@ class Projects extends React.Component {
                 name: name
             }
         });
+    }
+
+    filterName(name, projectFiltered){
+        
+        projectFiltered = projectFiltered.filter((el) => {
+            let projectName = el.name.toLowerCase();
+
+
+            return projectName.includes(name)
+        });
+
+        return projectFiltered;
+    }
+
+    filterUF(state, projectFiltered){
+        projectFiltered = projectFiltered.filter((el) => {
+            return el.uf === state
+        });
+
+        return projectFiltered;
     }
 
     handleSelectedFromChild(state, name) {
@@ -122,11 +141,14 @@ class Projects extends React.Component {
 
     render() {
 
-        let projects = (this.state.projectsFiltered.length === 0) ? this.state.projects : this.state.projectsFiltered;
+        let projectsFiltered = (this.state.projectsFiltered.length === 0) ? this.state.projects : this.state.projectsFiltered;
         let filtenarName = this.state.searchBy.name;
         let stateName = this.state.searchBy.state;
         let resultsFound = this.state.projectsFiltered.length;
         let { hitSearch } = this.state;
+        let projects = projectsFiltered.sort((project, nextProject) => {
+            return project.name.localeCompare(nextProject.name)
+        });
 
         return (
             <section className="pageSection projectsPage">
@@ -154,7 +176,12 @@ class Projects extends React.Component {
                         return (
                             <div className="cardProject" key={project._id}>
                                 <Link to={`/projects/${project._id}`}>
-                                    <img src={project.image} alt="" className="cardProject__image" />
+                                    {project.image &&
+                                        <img src={project.image} alt={`Logo do projeto social ${project.name}`} className="cardProject__image" />
+                                    }
+                                    {!project.image &&
+                                        <img src='' alt="img/image_rede_social" alt="Logo da aplicação, estrela com as letras RS no meio. Rede Social." className="cardProject__image" />
+                                    }
                                     <div className="cardProject__info">
                                         <h2 className="cardProject__title">
                                             {project.name}
