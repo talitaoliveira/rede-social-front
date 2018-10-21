@@ -25,13 +25,21 @@ a{
 }
 
 .pageSection__title{
-    font-size: 1.5em;
+    font-size: 2rem;
+    margin: 20px 0;
+    text-align: left;
+}
+.pageSection__subtitle{
+    font-size: 1.4rem;
     margin: 20px 0;
     text-align: left;
 }
 .pageSection__description{
     text-align: left;
     font-size: 1.2rem;
+    margin: 20px 0;
+    line-height: 1.6rem;
+    width: 100%;
 }
 
 /* Media-Queries */
