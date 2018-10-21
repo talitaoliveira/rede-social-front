@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BackButton from '../../components/BackButton'
 
 import './index.css';
 
@@ -8,10 +9,10 @@ class About extends React.Component {
     render() {
         return (
             <section className="pageSection aboutPage">
-                <Link to='/'>Voltar</Link>
+                <BackButton/>
+                <h2 className="pageSection__title aboutPagePage__title">Sobre este Projeto</h2>
 
                 <article className="pageSection__description">
-                    <h2 className="pageSection__title">Sobre este Projeto</h2>
                     <p>
                         Projeto desenvolvido por <strong>Talita Silva de Oliveira</strong>, com o objetivo de realizar a conclusão da pós graduacão de <strong>Design de Webapps com tecnologia front end</strong>.
                 </p>

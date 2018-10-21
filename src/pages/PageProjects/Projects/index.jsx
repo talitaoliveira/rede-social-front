@@ -6,6 +6,7 @@ import Api from '../../../service/api';
 
 import Modal from '../../../components/Modal';
 import Repository from '../../../infrastructure/Repository';
+import BackButton from '../../../components/BackButton'
 
 const repository = new Repository();
 class Projects extends React.Component {
@@ -129,6 +130,7 @@ class Projects extends React.Component {
 
         return (
             <section className="pageSection projectsPage">
+            <BackButton/>
                 {hitSearch > 0 &&
                     <div className="projectsPage__filterFeedback">
                         <span className="filterFeedback__title">Busca realizada:</span>

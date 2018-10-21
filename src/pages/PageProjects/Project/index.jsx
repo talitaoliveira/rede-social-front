@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Api from '../../../service/api';
 import './index.css';
 import Button from '../../../components/Button';
+import BackButton from '../../../components/BackButton'
 
 import Repository from '../../../infrastructure/Repository';
 const repository = new Repository();
@@ -91,6 +92,7 @@ class Project extends React.Component {
         
         return (
             <section className="pageSection projectPage">
+            <BackButton/>
                 <div className="projectData">
                     <img src={project.image} alt="" className="projectData__image" />
                     <h1 className="projectData__title">{project.name}</h1>

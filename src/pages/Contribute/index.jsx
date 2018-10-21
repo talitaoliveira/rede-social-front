@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BackButton from '../../components/BackButton'
 
 import './index.css';
 
@@ -8,7 +9,7 @@ class Contribute extends React.Component {
     render() {
         return (
             <section className="pageSection contributePage">
-                <Link to='/'>Voltar</Link>
+                <BackButton/>
 
                 <h2 className="pageSection__title contributePage__title">Contribua com este projeto!</h2>
 
