@@ -31,6 +31,8 @@
 }
 .projectInfo__group-value{
     font-size: 1.2rem;
+    white-space: pre-line;
+    line-height: 1.5em;
 }
 
 .buttonGroup{

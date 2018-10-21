@@ -15,7 +15,7 @@ class Project extends React.Component {
 
         this.state = {
             project: {}
-        }
+        } 
     }
 
     componentWillMount() {
@@ -37,6 +37,7 @@ class Project extends React.Component {
                         console.warn('[WARNIGN]: Nothing on local repository. GetDataFromAPI');
                     })
                 });
+                resolve();
             } catch (err) {
                 console.error('[APPLICATION ERROR]: ', error);
             }
@@ -47,6 +48,7 @@ class Project extends React.Component {
         return new Promise(async (resolve, reject) => {
             let projectId = this.props.match.params.number;
             repository.retrieveOne(projectId, data => {
+                data.description = this.formatDescription(data.description)
                 this.setState({
                     project: data
                 });
@@ -63,6 +65,7 @@ class Project extends React.Component {
 
             let projectId = this.props.match.params.number;
             Api.getProject(project => {
+                project.description = this.formatDescription(project.description)
                 this.setState({
                     project: project
                 });
@@ -72,22 +75,20 @@ class Project extends React.Component {
     }
 
     formatDescription(description) {
-        let descriptionSplit = description.toUpperCase();
-        // let descriptionFormated;
-        // descriptionSplit.forEach((line)=>{
-        //     descriptionFormated += `${line}\n`;
-        // });
+        let descriptionSplit = description.split(';');
+        let descriptionFormated = '';
+        descriptionSplit.forEach((line)=>{
+            descriptionFormated += `${line}\n`;
+        });
 
-        // return descriptionFormated;
-        return descriptionSplit;
+        return descriptionFormated;
 
     }
 
     render() {
 
         let { project } = this.state;
-        //let description = this.formatDescription(project.description);
-
+        
         return (
             <section className="pageSection projectPage">
                 <div className="projectData">
@@ -105,19 +106,19 @@ class Project extends React.Component {
                         <div className="projectInfo__group">
                             <strong className="projectInfo__group-label">Instagram:</strong>
                             <p className="projectInfo__group-value">
-                                <a target="_blank" href="{project.instagram ? project.instagram : '#'}">{project.instagram ? project.instagram : '-'}</a>
+                                <a target="_blank" href={project.instagram ? project.instagram : '#'}>{project.instagram ? project.instagram : '-'}</a>
                             </p>
                         </div>
                         <div className="projectInfo__group">
                             <strong className="projectInfo__group-label">Facebook:</strong>
                             <p className="projectInfo__group-value">
-                                <a target="_blank" href="{project.website ? project.website : '#'}">{project.website ? project.website : '-'}</a>
+                                <a target="_blank" href={project.website ? project.website : '#'}>{project.website ? project.website : '-'}</a>
                             </p>
                         </div>
                         <div className="projectInfo__group">
                             <strong className="projectInfo__group-label">Website:</strong>
                             <p className="projectInfo__group-value">
-                                <a target="_blank" href="{project.website ? project.website : '#'}">{project.website ? project.website : '-'}</a>
+                                <a target="_blank" href={project.website ? project.website : '#'}>{project.website ? project.website : '-'}</a>
                             </p>
                         </div>
                         {/* <div className="projectInfo__group buttonGroup">
