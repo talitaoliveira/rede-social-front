@@ -98,7 +98,7 @@ class Project extends React.Component {
                         <img src={project.image} alt={`Logo do projeto social ${project.name}`} className="projectData__image" />
                     }
                     {!project.image &&
-                        <img src='' alt="img/image_rede_social" alt="Logo da aplicação, estrela com as letras RS no meio. Rede Social." className="projectData__image" />
+                        <img src='./img/image_rede_social.png' alt="Logo da aplicação, estrela com as letras RS no meio. Rede Social." className="projectData__image" />
                     }
                     <h1 className="projectData__title">{project.name}</h1>
                     <div className="projectInfo">
