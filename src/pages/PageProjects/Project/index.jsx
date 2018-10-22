@@ -62,16 +62,22 @@ class Project extends React.Component {
     }
 
     getDataFromAPI() {
-        return new Promise(async (resolve, reject) => {
 
-            let projectId = this.props.match.params.number;
-            Api.getProject(project => {
-                project.description = this.formatDescription(project.description)
-                this.setState({
-                    project: project
+        return new Promise((resolve, reject) => {
+            try {
+                let projectId = this.props.match.params.number;
+                Api.getProject(project => {
+                    project.description = this.formatDescription(project.description)
+                    this.setState({
+                        project: project
+                    });
+                    resolve(project);
+                }, projectId).catch(err => {
+                    reject(err);
                 });
-                resolve(project);
-            }, projectId);
+            } catch (err) {
+                reject(err);
+            }
         });
     }
 
@@ -116,7 +122,7 @@ class Project extends React.Component {
                                 Instagram:</strong>
                             <p className="projectInfo__group-value">
                                 {project.instagram &&
-                                    <a target="_blank" href={project.instagram}>{project.instagram}</a>
+                                    <a target="_blank" className="projectInfo__link" href={project.instagram}>{project.instagram}</a>
                                 }
                             </p>
                         </div>
@@ -125,7 +131,7 @@ class Project extends React.Component {
                                 <i className="fab fa-facebook projectInfo__social-icon"></i>Facebook:</strong>
                             <p className="projectInfo__group-value">
                                 {project.facebook &&
-                                    <a target="_blank" href={project.facebook}>{project.facebook}</a>
+                                    <a target="_blank" className="projectInfo__link" href={project.facebook}>{project.facebook}</a>
                                 }
                             </p>
                         </div>
@@ -133,7 +139,7 @@ class Project extends React.Component {
                             <strong className="projectInfo__group-label">Website:</strong>
                             <p className="projectInfo__group-value">
                                 {project.website &&
-                                    <a target="_blank" href={project.website}>{project.website}</a>
+                                    <a target="_blank" className="projectInfo__link" href={project.website}>{project.website}</a>
                                 }                            </p>
                         </div>
                         {/* <div className="projectInfo__group buttonGroup">

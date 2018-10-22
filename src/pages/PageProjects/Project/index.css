@@ -37,7 +37,9 @@
 .projectInfo__social-icon{
     margin-right: 10px;
 }
-
+.projectInfo__link{
+    word-break: break-all;
+}
 .buttonGroup{
     display: flex;
     justify-content: space-around;
