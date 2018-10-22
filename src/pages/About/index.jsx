@@ -30,7 +30,6 @@ class About extends React.Component {
 
                 <article className="pageSection__description">
                     <h3 className="pageSection__subtitle">Contato</h3>
-
                     <ul className="content__social">
                         
                         <li className="social-links social-links__github">
