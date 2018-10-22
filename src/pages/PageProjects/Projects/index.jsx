@@ -198,6 +198,7 @@ class Projects extends React.Component {
                                     </div>
                                 </Link>
                             </div>
+                            
                         );
                     })}
                 </div>
