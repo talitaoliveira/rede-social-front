@@ -42,7 +42,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/rede-social/'
+        publicPath: './'
     },
     resolve: {
         extensions: [".js", ".jsx"]
@@ -75,7 +75,7 @@ module.exports = {
                         options: {
                             // you can specify a publicPath here
                             // by default it use publicPath in webpackOptions.output
-                            publicPath: '../'
+                            publicPath: './'
                         }
                     },
                     "css-loader"
