@@ -18,7 +18,7 @@ class Contribute extends React.Component {
                     <br></br>
                     <p>Para contribuir na parte do desenvolvimento deste projeto, basta clonar ou criar um fork dele no github</p>
                     <br></br>
-                    <p> Link para o reposiório: <a href="https://github.com/talitaoliveira">https://github.com/talitaoliveira</a></p>
+                    <p> Link para o reposiório: <a href="https://github.com/talitaoliveira/rede-social-front">https://github.com/talitaoliveira/rede-social-front</a></p>
 
                 </article>
 
