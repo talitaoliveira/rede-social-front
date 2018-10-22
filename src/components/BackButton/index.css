@@ -1,7 +1,7 @@
 .backButton{
     position: fixed;
     left: 20px;
-    top: 90px;
+    bottom: 20px;
     background-color: #20355E;
     color: #FFF;
 }
