@@ -11,7 +11,7 @@ import './assets/css/pure-min.css';
 import App from './pages/App.jsx';
 
 ReactDOM.render(
-    <HashRouter basename="/rede-social">
+    <HashRouter>
         <App />
     </HashRouter>,
     document.querySelector('#main')
