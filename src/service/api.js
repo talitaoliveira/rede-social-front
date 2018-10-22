@@ -4,12 +4,15 @@ const axios = require('axios');
 const urlApi = 'https://talitaoliveira.com.br/api-projects';
 
 const getProjects = (callback) => {
-    axios.get(`${urlApi}/projects/`, {
-        headers: {'Content-Type': 'application/json'}
-    }).then((res) => {
-        return callback(res.data);
-    }).catch((err) => {
-        return callback({error: err});
+
+    return new Promise((resolve, reject) => {
+        axios.get(`${urlApi}/projects/`, {
+            headers: {'Content-Type': 'application/json'}
+        }).then((res) => {
+            resolve(callback(res.data));
+        }).catch((err) => {
+            reject();
+        })
     })
 }
 
@@ -19,7 +22,7 @@ const getProject = (callback, id) => {
     }).then((res) => {
         return callback(res.data);
     }).catch((err) => {
-        return callback({error: err});
+        return Promise.reject();
     })
 }
 
