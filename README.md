@@ -1,6 +1,6 @@
 # Rede Social
 
-<img src='src/assets/img/image_rede_social.png' alt="Logo da aplicação, estrela com as letras RS no meio. Rede Social." className="projectData__image" />
+<img src='src/assets/img/image_rede_social.png' alt="Logo da aplicação, estrela com as letras RS no meio. Rede Social." width="300px" />
 
 
 <p>
