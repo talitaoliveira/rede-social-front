@@ -68,6 +68,8 @@ class Projects extends React.Component {
                         projects: projects
                     });
                     resolve(projects);
+                }).catch(err =>{
+                    reject(err);
                 });
             } catch (err) {
                 reject(err);
@@ -141,14 +143,18 @@ class Projects extends React.Component {
 
     render() {
 
-        let projectsFiltered = (this.state.projectsFiltered.length === 0) ? this.state.projects : this.state.projectsFiltered;
+        let projects = (this.state.projectsFiltered.length === 0) ? this.state.projects : this.state.projectsFiltered;
         let filtenarName = this.state.searchBy.name;
         let stateName = this.state.searchBy.state;
         let resultsFound = this.state.projectsFiltered.length;
         let { hitSearch } = this.state;
-        let projects = projectsFiltered.sort((project, nextProject) => {
-            return project.name.localeCompare(nextProject.name)
-        });
+
+        if(projects.length > 0){
+            projects = projects.sort((project, nextProject) => {
+                return project.name.localeCompare(nextProject.name)
+            });
+        }
+        
 
         return (
             <section className="pageSection projectsPage">
