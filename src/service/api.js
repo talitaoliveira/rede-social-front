@@ -7,7 +7,7 @@ const getProjects = (callback) => {
 
     return new Promise((resolve, reject) => {
         axios.get(`${urlApi}/projects/`, {
-            headers: {'Content-Type': 'application/json'}
+            headers: { 'Content-Type': 'application/json' }
         }).then((res) => {
             resolve(callback(res.data));
         }).catch((err) => {
@@ -17,12 +17,14 @@ const getProjects = (callback) => {
 }
 
 const getProject = (callback, id) => {
-    axios.get(`${urlApi}/projects/${id}`, {
-        headers: {'Content-Type': 'application/json'}
-    }).then((res) => {
-        return callback(res.data);
-    }).catch((err) => {
-        return Promise.reject();
+    return new Promise((resolve, reject) => {
+        axios.get(`${urlApi}/projects/${id}`, {
+            headers: { 'Content-Type': 'application/json' }
+        }).then((res) => {
+            resolve(callback(res.data));
+        }).catch((err) => {
+            reject();
+        })
     })
 }
 
