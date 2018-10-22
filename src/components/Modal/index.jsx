@@ -5,6 +5,7 @@ import './index.css';
 export default function Modal(props) {
 
     var handleToUpdate = props.handleSelectedFilter;
+    //getAllStates(props.projects);
 
     function openModal() {
         var favDialog = document.getElementById('favDialog');
@@ -22,6 +23,18 @@ export default function Modal(props) {
         let nameIputed = document.getElementById('filter__name').value;
         closeModal();
         handleToUpdate(stateChoosed, nameIputed);
+    }
+
+    function getAllStates(projects) {
+        let states = [];
+        
+        if (projects.length > 0) {
+            states = projects.map(project => {
+                return project.uf
+            });
+            console.log(states)
+        }
+
     }
 
     return (
@@ -42,9 +55,13 @@ export default function Modal(props) {
                     <label htmlFor="filter__state" className="filter__label">Buscar por estado:</label>
                     <select name="filter__state" className="filter__value filter__state" id="filter__state">
                         <option value="">Selecione</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="PE">PE</option>
+                        {/* {Object.keys(props.projects).forEach((project) => {
+                            console.log(props.projects[project].uf)
+                            return (
+                                <option value={props.projects[project].uf}>{props.projects[project].uf}</option>
+                            ); */}
+                        })}
                     </select>
                 </section>
                 <button className={`pure-button button-xlarge`} onClick={() => sendFilter()}>
