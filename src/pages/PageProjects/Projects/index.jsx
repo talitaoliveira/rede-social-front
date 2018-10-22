@@ -120,7 +120,7 @@ class Projects extends React.Component {
             let projectName = el.name.toLowerCase();
 
 
-            return projectName.includes(name)
+            return projectName.includes(name.toLowerCase())
         });
 
         return projectFiltered;
