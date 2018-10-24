@@ -1,5 +1,5 @@
 # Rede Social
-<div style="width:100%;display:flex;algin-items:center;justify-content:center;margin: 50px 0;">
+<div style="text-align:center">
     <img src='src/assets/img/image_rede_social.png' alt="Logo da aplicação, estrela com as letras RS no meio. Rede Social." width="300px" height="300px" />
     </div>
 <p>
