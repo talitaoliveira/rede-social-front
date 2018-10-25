@@ -5,7 +5,6 @@ import './index.css';
 export default function Modal(props) {
 
     var handleToUpdate = props.handleSelectedFilter;
-    //getAllStates(props.projects);
 
     function openModal() {
         var favDialog = document.getElementById('favDialog');

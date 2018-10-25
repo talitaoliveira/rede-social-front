@@ -53,21 +53,3 @@ a{
         padding: 25px;
     }
 }
-
-
-
-/* media queries - livro */
-/* @media(max-width: 992px){
-    div.center{
-        margin-top: 78px;
-        background-color: red;
-    }
-}
-
-@media(max-width: 600px){
-    div.center{
-        margin-top: 62px;
-        background-color: green;
-        
-    }
-} */

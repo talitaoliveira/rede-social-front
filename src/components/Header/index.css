@@ -35,27 +35,3 @@ div.header h4.label{
         margin-top: 10px;
     }
 }
-
-/* media queries */
-/* 
-@media(max-width: 992px){
-    div.header img.logo{
-        height: 78px;
-        width: 139px;
-    }
-
-    div.header h4.label{
-        line-height: 78px;
-    }
-}
-
-@media(max-width: 600px){
-    div.header img.logo{
-        height: 62px;
-        width: 110px;
-    }
-
-    div.header h4.label{
-        line-height: 62px;
-    }
-} */
