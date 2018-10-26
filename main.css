@@ -54,23 +54,6 @@ a{
     }
 }
 
-
-
-/* media queries - livro */
-/* @media(max-width: 992px){
-    div.center{
-        margin-top: 78px;
-        background-color: red;
-    }
-}
-
-@media(max-width: 600px){
-    div.center{
-        margin-top: 62px;
-        background-color: green;
-        
-    }
-} */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -168,29 +151,6 @@ div.header h4.label{
     }
 }
 
-/* media queries */
-/* 
-@media(max-width: 992px){
-    div.header img.logo{
-        height: 78px;
-        width: 139px;
-    }
-
-    div.header h4.label{
-        line-height: 78px;
-    }
-}
-
-@media(max-width: 600px){
-    div.header img.logo{
-        height: 62px;
-        width: 110px;
-    }
-
-    div.header h4.label{
-        line-height: 62px;
-    }
-} */
 
 .menu{
     padding: 1em;
