@@ -66,7 +66,7 @@ class Project extends React.Component {
         return new Promise((resolve, reject) => {
             try {
                 let projectId = this.props.match.params.number;
-                Api.getProject(project => {
+                Api.getOneProject(project => {
                     project.description = this.formatDescription(project.description)
                     this.setState({
                         project: project
@@ -142,10 +142,10 @@ class Project extends React.Component {
                                     <a target="_blank" className="projectInfo__link" href={project.website}>{project.website}</a>
                                 }                            </p>
                         </div>
-                        {/* <div className="projectInfo__group buttonGroup">
+                        <div className="projectInfo__group buttonGroup">
                             <Button enabled={project.volunteers} text="Quero ser voluntário!" />
                             <Button enabled={project.donation} text="Quero doar!" />
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </section>
