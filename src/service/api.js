@@ -1,7 +1,7 @@
 
 const axios = require('axios');
 // const urlApi = 'http://localhost:8000';
-const urlApi = './projetos.json';
+const urlApi = '/projetos.json';
 // const urlApi = 'https://talitaoliveira.com.br/rede-social/projetos.json';
 
 const getProjects = (callback) => {
