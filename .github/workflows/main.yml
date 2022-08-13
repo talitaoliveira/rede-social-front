@@ -37,8 +37,8 @@ jobs:
 
       - name: Run build
         run: |
-        npm install
-        npm run build
+          npm install
+          npm run build
 
       # Deploy to GH Pages
       - name: Deploy to GitHub Pages
