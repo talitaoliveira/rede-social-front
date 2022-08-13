@@ -36,7 +36,9 @@ jobs:
           echo test, and deploy your project.
 
       - name: Run build
-        run: npm run build
+        run: |
+        npm install
+        npm run build
 
       # Deploy to GH Pages
       - name: Deploy to GitHub Pages
