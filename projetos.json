@@ -118,5 +118,22 @@
             "image": "",
             "instagram": "https: //www.instagram.com/samaritanos.recife/",
             "facebook": ""
+        },
+        {
+            "_id": 7,
+            "name": "Teste",
+            "description": "Teste",
+            "volunteers": true,
+            "location": null,
+            "donations": true,
+            "email": null,
+            "phone": null,
+            "address": null,
+            "number": null,
+            "city": "Recife",
+            "uf": "Pernambuco",
+            "image": "",
+            "instagram": "",
+            "facebook": ""
         }
     ]
